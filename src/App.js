@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-<<<<<<< HEAD
-
-=======
 import ChoreList from './components/ChoreList';
->>>>>>> 8a3f4e64042cf1108d77763bbd787be9b1b12517
+import AddChore from './components/AddChore';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
 
 class App extends Component {
 
@@ -15,49 +18,39 @@ class App extends Component {
     }
   };
 
+  
+
   render() {
     return (
       <div className="App">
+      <MuiThemeProvider>
         <div className="container">
 
           <div className="user" id="Amanda">
             <h2>Amanda</h2>
             <ChoreList />
-            <input type="text" className="textbox" name="chore" placeholder="Chore..." id="amanda-chore-text" required />
-            <input type="button" id="amanda-chore-button" value="Add Chore" />
-            <input type="button" id="amanda-chore-clear" value="Clear Done" />
+            <AddChore />
           </div>
 
           <div className="user" id="Rob">
             <h2>Rob</h2>
             <ChoreList />
-            <form className="add-chore">
-              <input type="text" className="textbox" name="chore" placeholder="Chore..." required />
-              <input type="button" className="btn" value="Add Chore" />
-              <input type="button" id="amanda-chore-clear" value="Clear Done" />
-            </form>
+            <AddChore />
           </div>
 
           <div className="user" id="Shannon">
             <h2>Shannon</h2>
             <ChoreList />
-            <form className="add-chore">
-              <input type="text" className="textbox" name="chore" placeholder="Chore..." required />
-              <input type="button" className="btn" value="Add Chore" />
-              <input type="button" id="amanda-chore-clear" value="Clear Done" />
-            </form>
+            <AddChore />
           </div>
 
           <div className="user" id="Mitchell">
             <h2>Mitchell</h2>
             <ChoreList />
-            <form className="add-chore">
-              <input type="text" className="textbox" name="chore" placeholder="Chore..." required />
-              <input type="button" className="btn" value="Add Chore" />
-              <input type="button" id="amanda-chore-clear" value="Clear Done" />
-            </form>
+            <AddChore />
           </div>
         </div>
+        </MuiThemeProvider>
       </div>
     );
   }
