@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RaisedButton from 'material-ui/RaisedButton';
-// Needed for onTouchTap
-// http://stackoverflow.com/a/34015469/988941
-injectTapEventPlugin();
+import ChoreList from './components/ChoreList';
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+        users: []
+    }
+  };
+
   render() {
     return (
       <div className="App">
@@ -15,9 +18,7 @@ class App extends Component {
 
           <div className="user" id="Amanda">
             <h2>Amanda</h2>
-            <ul className="chores" id="amanda-chores">
-              <li>Sweep some shit</li>
-            </ul>
+            <ChoreList />
             <input type="text" className="textbox" name="chore" placeholder="Chore..." id="amanda-chore-text" required />
             <input type="button" id="amanda-chore-button" value="Add Chore" />
             <input type="button" id="amanda-chore-clear" value="Clear Done" />
@@ -25,8 +26,7 @@ class App extends Component {
 
           <div className="user" id="Rob">
             <h2>Rob</h2>
-            <ul className="chores" id="rob-chores">
-            </ul>
+            <ChoreList />
             <form className="add-chore">
               <input type="text" className="textbox" name="chore" placeholder="Chore..." required />
               <input type="button" className="btn" value="Add Chore" />
@@ -36,8 +36,7 @@ class App extends Component {
 
           <div className="user" id="Shannon">
             <h2>Shannon</h2>
-            <ul className="chores" id="shannon-chores">
-            </ul>
+            <ChoreList />
             <form className="add-chore">
               <input type="text" className="textbox" name="chore" placeholder="Chore..." required />
               <input type="button" className="btn" value="Add Chore" />
@@ -47,8 +46,7 @@ class App extends Component {
 
           <div className="user" id="Mitchell">
             <h2>Mitchell</h2>
-            <ul className="chores" id="mitchell-chores">
-            </ul>
+            <ChoreList />
             <form className="add-chore">
               <input type="text" className="textbox" name="chore" placeholder="Chore..." required />
               <input type="button" className="btn" value="Add Chore" />
