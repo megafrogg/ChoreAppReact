@@ -1,0 +1,40 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+}
+
+.user {
+  border-width: 10px;
+  border-color: black;
+}
+
+.chores {
+  color: black;
+  font-family: sans-serif;
+}
+.textbox {
+    width: 200px;
+}
+
+#Amanda {
+  grid-column-start: 1;
+}
+
+#Rob {
+  grid-column-start: 2;
+}
+
+#Shannon {
+  grid-column-start: 3;
+}
+
+#Mitchell {
+  grid-column-start: 4;
+}
+
+h2 {
+  border-style: solid;
+  border-color: black;
+  color: black;
+  text-align: center;
+}
